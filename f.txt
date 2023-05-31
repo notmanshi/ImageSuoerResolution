@@ -1,0 +1,13 @@
+from PIL import Image
+
+# Load an image
+image = Image.open('path/to/image.jpg')
+
+# Resize the image to the expected input shape
+resized_image = image.resize((256, 256))
+
+# Convert the image to a NumPy array and normalize the pixel values
+image_array = np.array(resized_image) / 255.0
+
+# Pass the image array to your model
+model.predict(image_array)
